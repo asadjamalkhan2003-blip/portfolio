@@ -1,0 +1,792 @@
+git status<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Personal Portfolio of Asad Jamal — Full Stack Developer crafting beautiful digital experiences." />
+  <meta name="keywords" content="portfolio, Asad Jamal, developer, web developer, full stack, designer" />
+  <meta name="author" content="Asad Jamal" />
+  <meta property="og:title" content="Asad Jamal — Portfolio" />
+  <meta property="og:description" content="Full Stack Developer & Designer" />
+  <meta property="og:type" content="website" />
+  <title>Asad Jamal — Portfolio</title>
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons (using Unicode + CSS icons via emoji set) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ==================== PRELOADER ==================== -->
+  <div id="preloader" role="dialog" aria-label="Loading screen">
+    <div class="loader-content">
+      <div id="loader-3d-container"></div>
+      <div class="loader-progress-wrapper">
+        <div class="loader-progress-bar">
+          <div class="loader-progress-fill" id="loader-progress-fill"></div>
+        </div>
+        <div class="loader-stats">
+          <span class="loader-text">Initializing 3D Environment</span>
+          <span class="loader-percentage" id="loader-percentage">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Interactive Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Animated Background -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo" id="nav-logo">AJ.</a>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="#hero" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero" aria-label="Hero section">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left: Text -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Available for Freelance Work
+          </div>
+
+          <h1 class="hero-name">
+            Hi, I'm <span class="gradient-text" id="hero-name-text">Asad Jamal</span>
+          </h1>
+
+          <p class="hero-title">
+            <span class="typing-wrapper">
+              <span id="typed-text" class="typed-text"></span>
+              <span class="cursor-blink" aria-hidden="true"></span>
+            </span>
+          </p>
+
+          <p class="hero-description" id="hero-desc">
+            I'm a passionate Frontend Web Developer skilled in HTML, CSS & JavaScript. I love crafting beautiful,
+            responsive websites and professional portfolios that leave a lasting impression. Let's build something
+            amazing together!
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary" id="hero-cta-contact">
+              <i class="fa-solid fa-paper-plane"></i> Hire Me
+            </a>
+            <a href="./Asad_Jamal_Resume_IBM_Coursera.pdf" class="btn btn-secondary" id="hero-cta-cv" download>
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number" id="stat-projects">5+</div>
+              <div class="stat-label">Projects Done</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="stat-exp">1+</div>
+              <div class="stat-label">Year Exp.</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" id="stat-clients">10+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Visual -->
+        <div class="hero-visual">
+          <div class="hero-image-container">
+            <!-- Spinning rings -->
+            <div class="hero-image-ring"></div>
+            <div class="hero-image-ring-2"></div>
+
+            <!-- Profile Image -->
+            <img src="images/profile-kfc.jpg" alt="Asad Jamal - Frontend Web Developer" class="hero-img"
+              id="hero-img-wrapper" />
+
+            <!-- Floating badges -->
+            <div class="floating-badge floating-badge-1">
+              <i class="fa-solid fa-code" style="color:#8b5cf6;"></i>
+              Web Developer
+            </div>
+            <div class="floating-badge floating-badge-2">
+              <i class="fa-solid fa-star" style="color:#f59e0b;"></i>
+              Top Rated
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" aria-label="About me section">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Image Column -->
+        <div class="about-image-wrapper reveal-left">
+          <div class="about-image-frame" id="about-img-frame">
+            <img src="images/image-desk.jpg" alt="Asad Jamal"
+              style="width:100%;height:100%;object-fit:cover;object-position:top;" />
+          </div>
+          <div class="about-exp-badge" id="about-exp-badge">
+            <div class="years">1+</div>
+            <div class="label">Year of<br>Experience</div>
+          </div>
+        </div>
+
+        <!-- Text Column -->
+        <div class="about-text reveal-right">
+          <span class="section-tag">
+            <i class="fa-solid fa-user"></i> About Me
+          </span>
+          <h2 class="section-title">
+            Passionate Web Developer &<br><span class="gradient-text">Creative Thinker</span>
+          </h2>
+          <p style="color:var(--text-secondary); margin-bottom:24px; font-size:1rem; line-height:1.85;" id="about-bio">
+            Hi! I'm <strong style="color:var(--text-primary);">Asad Jamal</strong>, a passionate Frontend Web Developer
+            with expertise in
+            building responsive and visually stunning websites. I specialize in creating professional portfolios
+            and modern web experiences using HTML, CSS, and JavaScript.
+          </p>
+          <p style="color:var(--text-secondary); margin-bottom:32px; font-size:1rem; line-height:1.85;"
+            id="about-bio-2">
+            With over 1 year of hands-on experience, I am committed to delivering clean,
+            pixel-perfect code and user-friendly interfaces. My goal is to transform your ideas
+            into beautiful digital realities that stand out from the crowd.
+          </p>
+
+          <!-- Info Grid -->
+          <div class="about-info-grid" id="about-info-grid">
+            <div class="info-item">
+              <div class="info-label">Name</div>
+              <div class="info-value" id="info-name">Asad Jamal</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Age</div>
+              <div class="info-value" id="info-age">24 Years</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Location</div>
+              <div class="info-value" id="info-location">Charsadda, Pakistan</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Email</div>
+              <div class="info-value">
+                <a href="mailto:asadjamalkhan2003@gmail.com" id="info-email">asadjamalkhan2003@gmail.com</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Phone</div>
+              <div class="info-value" id="info-phone">+92 326 971 2943</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Status</div>
+              <div class="info-value" style="color:var(--green);">✅ Available</div>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary" id="about-cv-btn" download>
+            <i class="fa-solid fa-download"></i> Download CV
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section id="skills" aria-label="Skills section">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:20px;" class="reveal">
+        <span class="section-tag">
+          <i class="fa-solid fa-bolt"></i> My Expertise
+        </span>
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-subtitle" style="margin:0 auto 60px;">
+          Technologies and tools I work with to bring ideas to life.
+        </p>
+      </div>
+
+      <!-- Tech Icons Grid -->
+      <div class="skills-grid" id="skills-grid">
+        <div class="skill-card reveal delay-1"><span class="skill-icon">🌐</span><span class="skill-name">HTML5</span>
+        </div>
+        <div class="skill-card reveal delay-2"><span class="skill-icon">🎨</span><span class="skill-name">CSS3</span>
+        </div>
+        <div class="skill-card reveal delay-3"><span class="skill-icon">⚡</span><span
+            class="skill-name">JavaScript</span></div>
+        <div class="skill-card reveal delay-4"><span class="skill-icon">📱</span><span
+            class="skill-name">Responsive</span></div>
+        <div class="skill-card reveal delay-5"><span class="skill-icon">🎯</span><span class="skill-name">UI
+            Design</span></div>
+        <div class="skill-card reveal delay-1"><span class="skill-icon">💼</span><span
+            class="skill-name">Portfolio</span></div>
+        <div class="skill-card reveal delay-2"><span class="skill-icon">🐙</span><span class="skill-name">Git</span>
+        </div>
+        <div class="skill-card reveal delay-3"><span class="skill-icon">🔷</span><span class="skill-name">Figma</span>
+        </div>
+        <div class="skill-card reveal delay-4"><span class="skill-icon">🌟</span><span
+            class="skill-name">Bootstrap</span></div>
+      </div>
+
+      <!-- Skill Bars -->
+      <div class="skill-bars" id="skill-bars-container">
+        <div class="skill-bar-item reveal">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">HTML5</span>
+            <span class="skill-bar-pct">92%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-pct="92"></div>
+          </div>
+        </div>
+        <div class="skill-bar-item reveal delay-1">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">CSS3 & Responsive Design</span>
+            <span class="skill-bar-pct">88%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-pct="88"></div>
+          </div>
+        </div>
+        <div class="skill-bar-item reveal delay-2">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">JavaScript</span>
+            <span class="skill-bar-pct">78%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-pct="78"></div>
+          </div>
+        </div>
+        <div class="skill-bar-item reveal delay-3">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">Portfolio & UI Design</span>
+            <span class="skill-bar-pct">85%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-pct="85"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects" aria-label="Projects section">
+    <div class="container">
+      <div style="text-align:center;" class="reveal">
+        <span class="section-tag">
+          <i class="fa-solid fa-folder-open"></i> Portfolio
+        </span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle" style="margin:0 auto 60px;">
+          A selection of projects that showcase my skills and passion for building great products.
+        </p>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- Project 1: Multi Hotel Management -->
+        <article class="project-card reveal delay-1">
+          <div class="project-thumbnail">
+            <div class="project-thumbnail-placeholder" style="background: linear-gradient(135deg,#1e1b4b,#4c1d95);">
+              <span class="proj-num">01</span>
+            </div>
+            <div class="project-tag-row">
+              <span class="project-tag">Web App</span>
+              <span class="project-tag">Management</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link-btn" title="Live Demo" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="#" class="project-link-btn" title="GitHub" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Multi Hotel Management System</h3>
+            <p class="project-desc">
+              A comprehensive hotel management platform that streamlines room bookings, guest check-in/check-out,
+              billing, and staff management across multiple hotel branches. Features an intuitive dashboard
+              for real-time room availability, reservation tracking, and automated invoice generation —
+              all built with a clean, responsive interface.
+            </p>
+            <div class="project-tech">
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">CSS3</span>
+              <span class="tech-pill">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: WorldAtlas - Country Intelligence -->
+        <article class="project-card reveal delay-3">
+          <div class="project-thumbnail">
+            <div class="project-thumbnail-placeholder"
+              style="background: linear-gradient(135deg,#1a1035,#3b2d8a,#6c63ff); position:relative; overflow:hidden;">
+              <!-- WorldAtlas branded preview -->
+              <div
+                style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;z-index:1;">
+                <div style="font-size:2.4rem;filter:drop-shadow(0 0 12px rgba(108,99,255,0.8));">🌍</div>
+                <div
+                  style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;letter-spacing:1px;">
+                  WorldAtlas</div>
+                <div style="font-size:0.72rem;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;">
+                  Country Explorer</div>
+                <div style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;justify-content:center;">
+                  <span
+                    style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:3px 10px;font-size:0.65rem;color:rgba(255,255,255,0.8);">195+
+                    Countries</span>
+                  <span
+                    style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:3px 10px;font-size:0.65rem;color:rgba(255,255,255,0.8);">Live
+                    Data</span>
+                  <span
+                    style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:3px 10px;font-size:0.65rem;color:rgba(255,255,255,0.8);">7B+
+                    Population</span>
+                </div>
+              </div>
+              <span class="proj-num" style="position:absolute;bottom:12px;right:16px;z-index:1;opacity:0.25;">03</span>
+            </div>
+            <div class="project-tag-row">
+              <span class="project-tag">Country Explorer</span>
+              <span class="project-tag">Live Data</span>
+            </div>
+            <div class="project-links">
+              <a href="https://country-information-nu.vercel.app/" class="project-link-btn" title="Live Demo"
+                target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://country-information-nu.vercel.app/" class="project-link-btn" title="Visit Site"
+                target="_blank" rel="noopener">
+                <i class="fa-solid fa-globe"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">WorldAtlas — Country Intelligence</h3>
+            <p class="project-desc">
+              A real-time country explorer featuring 195+ countries with live data on flags, capitals,
+              populations, currencies, timezones, and weather. Built with a sleek dark/light mode toggle,
+              instant search functionality, and an interactive globe-style UI — delivering a seamless global
+              intelligence experience straight in the browser.
+            </p>
+            <div class="project-tech">
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">CSS3</span>
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">REST API</span>
+              <span class="tech-pill">Vercel</span>
+            </div>
+            <a href="https://country-information-nu.vercel.app/" target="_blank" rel="noopener" class="vercel-btn">
+              <svg width="16" height="16" viewBox="0 0 76 65" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
+              </svg>
+              Live on Vercel
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Weather App -->
+        <article class="project-card reveal delay-4">
+          <div class="project-thumbnail">
+            <div class="project-thumbnail-placeholder"
+              style="background: linear-gradient(135deg,#1a0a2e,#2d1b4e,#4a2070); position:relative; overflow:hidden;">
+              <!-- Blurred ambient orbs matching the screenshot -->
+              <div
+                style="position:absolute;top:-30px;left:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,120,0,0.35),transparent 70%);border-radius:50%;">
+              </div>
+              <div
+                style="position:absolute;bottom:-30px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(120,40,180,0.45),transparent 70%);border-radius:50%;">
+              </div>
+              <!-- Weather card preview -->
+              <div
+                style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:16px;z-index:1;">
+                <div
+                  style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:14px 18px;width:90%;backdrop-filter:blur(6px);">
+                  <div
+                    style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1rem;color:#fff;margin-bottom:2px;">
+                    London</div>
+                  <div style="font-size:0.6rem;color:rgba(255,255,255,0.5);margin-bottom:8px;">GB • 51.51°, -0.13°</div>
+                  <div
+                    style="font-family:'Outfit',sans-serif;font-weight:800;font-size:1.8rem;background:linear-gradient(135deg,#f97316,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">
+                    23°C</div>
+                  <div style="font-size:0.6rem;color:rgba(255,255,255,0.5);margin-top:2px;">Feels like 22°C</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;">
+                    <span
+                      style="background:linear-gradient(135deg,#f97316,#fbbf24);border-radius:20px;padding:3px 10px;font-size:0.6rem;color:#fff;font-weight:600;">Clear
+                      Sky</span>
+                    <span style="font-size:0.6rem;color:rgba(255,255,255,0.5);">↑ 24°C &nbsp; ↓ 22°C</span>
+                  </div>
+                </div>
+              </div>
+              <span class="proj-num" style="position:absolute;bottom:10px;right:14px;z-index:1;opacity:0.2;">04</span>
+            </div>
+            <div class="project-tag-row">
+              <span class="project-tag">Weather App</span>
+              <span class="project-tag">Live API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://weather-app-orpin-omega-16.vercel.app" class="project-link-btn" title="Live Demo"
+                target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://weather-app-orpin-omega-16.vercel.app" class="project-link-btn" title="Visit Site"
+                target="_blank" rel="noopener">
+                <i class="fa-solid fa-globe"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Live Weather App</h3>
+            <p class="project-desc">
+              A real-time weather application that lets you search any city or country and instantly
+              displays live temperature, feels-like, daily high/low, weather condition, coordinates,
+              and local time — all wrapped in a stunning dark glassmorphism UI with warm amber gradients
+              and smooth ambient background effects.
+            </p>
+            <div class="project-tech">
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">CSS3</span>
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">Weather API</span>
+              <span class="tech-pill">Vercel</span>
+            </div>
+            <a href="https://weather-app-orpin-omega-16.vercel.app" target="_blank" rel="noopener" class="vercel-btn">
+              <svg width="16" height="16" viewBox="0 0 76 65" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
+              </svg>
+              Live on Vercel
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: Asad Studio and Photography -->
+        <article class="project-card reveal delay-2">
+          <div class="project-thumbnail">
+            <div class="project-thumbnail-placeholder"
+              style="background: linear-gradient(135deg,#1a0533,#6b21a8); position:relative; overflow:hidden;">
+              <img src="images/asad-profile.jpg" alt="Asad Studio"
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0.5;" />
+              <span class="proj-num" style="position:relative;z-index:1;">02</span>
+            </div>
+            <div class="project-tag-row">
+              <span class="project-tag">Photography</span>
+              <span class="project-tag">Studio</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link-btn" title="Live Demo" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="#" class="project-link-btn" title="GitHub" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Asad Studio & Photography</h3>
+            <p class="project-desc">
+              A stunning, fully responsive photography studio website built to showcase professional
+              photo shoots, portrait sessions, and studio packages. The site features an elegant
+              gallery with lightbox previews, smooth hover effects on each photo, a booking inquiry
+              form, and a pricing section — all crafted to reflect the premium quality and artistic
+              vision of Asad Studio.
+            </p>
+            <div class="project-tech">
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">CSS3</span>
+              <span class="tech-pill">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE / EDUCATION ==================== -->
+  <section id="experience" aria-label="Experience and Education section">
+    <div class="container">
+      <div style="text-align:center;" class="reveal">
+        <span class="section-tag">
+          <i class="fa-solid fa-briefcase"></i> Journey
+        </span>
+        <h2 class="section-title">Experience & <span class="gradient-text">Education</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto 60px;">
+          My professional journey and academic background.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+
+        <!-- Experience Column -->
+        <div>
+          <h3 class="timeline-col-title">Work Experience</h3>
+          <div class="timeline" id="experience-timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-period">2024 — Present</div>
+                <div class="timeline-role">Frontend Web Developer</div>
+                <div class="timeline-org">Freelance / Self-Employed</div>
+                <p class="timeline-desc">Designing and developing responsive websites and professional portfolios for
+                  clients. Specialized in creating pixel-perfect, modern UI using HTML, CSS & JavaScript.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-period">2023 — 2024</div>
+                <div class="timeline-role">Web Development Intern</div>
+                <div class="timeline-org">Internship / Training</div>
+                <p class="timeline-desc">Gained hands-on experience in frontend development, building responsive
+                  layouts, and implementing interactive UI components for real-world web projects.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Education Column -->
+        <div>
+          <h3 class="timeline-col-title">Education</h3>
+          <div class="timeline" id="education-timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-period">2020 — 2024</div>
+                <div class="timeline-role">Bachelor's in Computer Science</div>
+                <div class="timeline-org">Bacha Khan University, Charsadda</div>
+                <p class="timeline-desc">Completed Bachelor's degree in Computer Science from Bacha Khan University,
+                  Charsadda. Gained strong foundation in programming, data structures, software engineering, and web
+                  technologies.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-period">2024</div>
+                <div class="timeline-role">Frontend Web Development</div>
+                <div class="timeline-org">Self-Learning & Practice</div>
+                <p class="timeline-desc">Mastered modern frontend technologies including HTML5, CSS3, and JavaScript
+                  through extensive self-study, online courses, and hands-on project building.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-period">2023</div>
+                <div class="timeline-role">AWS Cloud Practitioner</div>
+                <div class="timeline-org">Amazon Web Services</div>
+                <p class="timeline-desc">Official AWS certification covering cloud concepts, services, security, and
+                  architecture best practices.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" aria-label="Contact section">
+    <div class="container">
+      <div style="text-align:center;" class="reveal">
+        <span class="section-tag">
+          <i class="fa-solid fa-envelope"></i> Get In Touch
+        </span>
+        <h2 class="section-title">Let's <span class="gradient-text">Work Together</span></h2>
+        <p class="section-subtitle" style="margin:0 auto 60px;">
+          Have a project in mind? I'd love to hear about it. Send me a message and let's make something great!
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left: Info -->
+        <div class="contact-info reveal-left">
+
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-detail">
+              <h4>Email</h4>
+              <a href="mailto:asadjamalkhan2003@gmail.com" id="contact-email">asadjamalkhan2003@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div class="contact-detail">
+              <h4>Phone</h4>
+              <p id="contact-phone">+92 326 971 2943</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail">
+              <h4>Location</h4>
+              <p id="contact-location">Charsadda, Pakistan</p>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div>
+            <p
+              style="font-family:var(--font-heading); font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px; font-weight:600;">
+              Follow Me</p>
+            <div class="social-links">
+              <a href="https://github.com/asadjamalkhan2003-blip" class="social-btn" id="social-github" title="GitHub"
+                target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="#" class="social-btn" id="social-linkedin" title="LinkedIn" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-btn" id="social-twitter" title="Twitter/X" target="_blank" rel="noopener">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="#" class="social-btn" id="social-instagram" title="Instagram" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/923269712943" class="social-btn" id="social-whatsapp" title="WhatsApp"
+                target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Form -->
+        <div class="reveal-right">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="form-name">Your Name</label>
+                <input type="text" id="form-name" class="form-input" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form-email">Your Email</label>
+                <input type="email" id="form-email" class="form-input" placeholder="john@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-subject">Subject</label>
+              <input type="text" id="form-subject" class="form-input" placeholder="Project Collaboration" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="form-message">Message</label>
+              <textarea id="form-message" class="form-input form-textarea" rows="6"
+                placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" id="form-submit-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span id="btn-text">Send Message</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="footer-logo">AJ.</a>
+        <p class="footer-copy">
+          Crafted with <span>❤️</span> by <strong id="footer-name">Asad Jamal</strong> &copy; <span
+            id="footer-year"></span>
+        </p>
+        <div class="footer-social">
+          <a href="https://github.com/asadjamalkhan2003-blip" class="social-btn" title="GitHub" target="_blank"
+            rel="noopener"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://wa.me/923269712943" class="social-btn" title="WhatsApp" target="_blank" rel="noopener"><i
+              class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="alert" aria-live="polite">
+    <i class="fa-solid fa-circle-check"></i>
+    Message sent successfully! I'll get back to you soon.
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
