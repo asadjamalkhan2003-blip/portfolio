@@ -21,7 +21,7 @@
     scroll-margin-top: 80px;
   }
   /* Hardware acceleration for offscreen sections */
-  #about, #skills, #projects, #certifications, #services, #contact {
+  #about, #skills, #projects, #certifications, #services, #testimonials, #contact {
     content-visibility: auto;
     contain-intrinsic-size: 1px 800px;
   }
