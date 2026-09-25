@@ -28,7 +28,7 @@ export default function Footer() {
     <footer data-aos="fade-up" data-aos-duration="600" className="relative bg-[#060a17]/60 backdrop-blur-2xl border-t border-white/[0.08] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/[0.06]">
-          
+
           {/* Brand */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-primary to-cyan-400 p-[1px] shadow-lg shadow-indigo-500/20">
@@ -40,7 +40,7 @@ export default function Footer() {
               <span className="text-base font-display font-bold text-white tracking-tight">
                 Asad Jamal
               </span>
-              <p className="text-xs text-slate-400">Frontend Web Developer</p>
+              <p className="text-xs text-slate-400">Full stack web developer Software Engineer </p>
             </div>
           </div>
 

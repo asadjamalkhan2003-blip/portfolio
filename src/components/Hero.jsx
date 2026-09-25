@@ -358,9 +358,9 @@ export default function Hero() {
               >
                 <div className="relative w-full h-full rounded-full overflow-hidden bg-dark-950 border-2 border-indigo-500/25">
                   <img
-                    src="/images/profile-kfc.jpg"
-                    alt="Asad Jamal - Frontend Web Developer"
-                    className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    src="/images/profile.jpg"
+                    alt="Asad Jamal - Full-Stack & Frontend Developer"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
                     loading="eager"
                   />
 

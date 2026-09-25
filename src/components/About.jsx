@@ -58,7 +58,7 @@ export default function About() {
 
   const details = [
     { label: 'Name', value: 'Asad Jamal', icon: User },
-    { label: 'Role', value: 'Frontend Developer', icon: Code },
+    { label: 'Role', value: 'Full stack web developer / Software Engineer', icon: Code },
     { label: 'Location', value: 'Charsadda, Pakistan', icon: MapPin },
     { label: 'Email', value: 'asadjamalkhan2003@gmail.com', href: 'mailto:asadjamalkhan2003@gmail.com', icon: Mail },
     { label: 'Phone', value: '+92 326 971 2943', href: 'tel:+923269712943', icon: Phone },
@@ -78,7 +78,7 @@ export default function About() {
   return (
     <section id="about" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div data-aos="fade-up" className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 backdrop-blur-xl border border-primary/25 text-primary-300 text-xs font-semibold uppercase tracking-wider mb-3 shadow-[0_2px_12px_rgba(99,102,241,0.15)]">
@@ -95,7 +95,7 @@ export default function About() {
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Left Column: Image in Glass Layer (5 cols) */}
           <div data-aos="fade-right" data-aos-duration="700" className="lg:col-span-5 relative">
             <div
@@ -109,7 +109,7 @@ export default function About() {
                   className="w-full aspect-[4/5] object-cover object-top hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060a17]/90 via-transparent to-transparent" />
-                
+
                 {/* Floating Frosted Glass Experience Card */}
                 <div
                   data-aos="fade-up"
@@ -132,7 +132,7 @@ export default function About() {
           <div data-aos="fade-left" data-aos-duration="700" className="lg:col-span-7 flex flex-col justify-center">
             <div className="space-y-4 text-slate-300/90 text-base leading-relaxed mb-8">
               <p>
-                Hi! I'm <strong className="text-white font-semibold">Asad Jamal</strong>, a dedicated Frontend Web Developer specializing in building high-performance, responsive web applications. My expertise centers on <span className="text-primary-300 font-medium">React.js</span>, modern <span className="text-primary-300 font-medium">JavaScript</span>, and utility-first styling with <span className="text-primary-300 font-medium">Tailwind CSS</span>.
+                Hi! I'm <strong className="text-white font-semibold">Asad Jamal</strong>, a dedicated Full stack Web Developer and Software Engineer specializing in building high-performance, responsive web applications. My expertise centers on <span className="text-primary-300 font-medium">React.js</span>, modern <span className="text-primary-300 font-medium">JavaScript</span>, and utility-first styling with <span className="text-primary-300 font-medium">Tailwind CSS</span>.
               </p>
               <p>
                 With a Bachelor's degree in Computer Science from <span className="text-slate-200 font-medium">Bacha Khan University</span>, I focus on turning creative design concepts into clean, accessible, and fast single-page web applications.

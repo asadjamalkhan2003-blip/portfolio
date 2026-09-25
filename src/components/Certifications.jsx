@@ -90,6 +90,14 @@ export default function Certifications() {
                     <GraduationCap className="w-3.5 h-3.5" />
                     <span>{cert.platform}</span>
                   </div>
+
+                  {/* Program Specialization Tag if present */}
+                  {cert.tag && (
+                    <div className="px-3.5 py-2 rounded-xl bg-purple-500/15 backdrop-blur-xl border border-purple-500/30 text-purple-300 font-semibold text-xs flex items-center gap-1.5 shadow-sm">
+                      <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                      <span>{cert.tag}</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Status Indicator */}
@@ -106,7 +114,7 @@ export default function Certifications() {
                 <div data-aos="fade-right" data-aos-delay="150" className="lg:col-span-8">
                   <div className="flex items-center gap-2 text-xs font-mono text-indigo-300 uppercase tracking-wider mb-2">
                     <ShieldCheck className="w-4 h-4 text-indigo-400" />
-                    <span>Authorized Course Curriculum</span>
+                    <span>{cert.badgeText || 'Authorized Course Curriculum'}</span>
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight mb-4">

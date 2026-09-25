@@ -1,5 +1,29 @@
 export const certifications = [
   {
+    id: 'ibm-full-stack-javascript-developer',
+    title: 'IBM Full-Stack JavaScript Developer',
+    issuer: 'IBM',
+    platform: 'Coursera',
+    tag: '12-Course Professional Specialization',
+    status: 'Successfully Completed',
+    completionDate: 'September 16, 2026',
+    verifyUrl: 'https://coursera.org/verify/professional-cert/CZNBY7XRF18A',
+    pdfUrl: '/IBM full stack certificate.pdf',
+    description:
+      'The IBM Full-Stack JavaScript Developer Professional Certificate is an intensive 12-course industry credential certifying end-to-end expertise in engineering, testing, and deploying cloud-native full-stack applications. It validates hands-on proficiency across modern front-end architectures with React, scalable back-end services with Node.js and Express, NoSQL database engineering with MongoDB, container orchestration with Docker, Kubernetes, and Red Hat OpenShift, as well as serverless computing, CI/CD automated pipelines, and DevOps methodologies.',
+    keySkills: [
+      'Full-Stack JavaScript (React, Node.js & Express)',
+      'Cloud-Native, Microservices & Serverless Computing',
+      'Container Orchestration (Docker, Kubernetes & OpenShift)',
+      'NoSQL Database Architecture & MongoDB',
+      'DevOps, CI/CD Automation & Agile/Scrum',
+      'RESTful APIs, Git/GitHub & Full-Stack Capstone'
+    ],
+    credentialId: 'CZNBY7XRF18A',
+    badgeText: 'IBM Professional Certificate (12 Courses)',
+    platformLogo: 'Coursera'
+  },
+  {
     id: 'ibm-html-css-js',
     title: 'Introduction to HTML, CSS, & JavaScript',
     issuer: 'IBM',
